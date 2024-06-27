@@ -1,21 +1,17 @@
 body {
-    font-family: 'Roboto', sans-serif; /* Modern sans-serif font */
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #111; /* Darker background for a modern look */
-    color: #f5f5f5;        /* Light text color for better readability */
-    line-height: 1.6;      /* Improved line spacing for better readability */
+    background-color: #111;
+    color: #f5f5f5;
+    line-height: 1.6;
 }
 
 header {
-    background-color: #222; 
+    background-color: #222;
     color: #f5f5f5;
-    text-align: left;  /* Align text to the left */
-    padding: 2.5rem 5%;  /* Increased padding for visual appeal, with padding on the sides */
-}
-
-.header-content {
-    margin-left: 2rem; /* Add some margin to the left */
+    text-align: left;
+    padding: 2.5rem 5%;
 }
 
 main {
@@ -23,7 +19,7 @@ main {
 }
 
 section {
-    margin-bottom: 3rem; /* Increased spacing between sections */
+    margin-bottom: 3rem;
 }
 
 h1, h2, h3, h4 {
@@ -31,21 +27,21 @@ h1, h2, h3, h4 {
 }
 
 .project {
-    background-color: #333; 
+    background-color: #333;
     padding: 1.5rem;
-    border-radius: 8px;  /* More rounded corners */
-    margin-bottom: 1.5rem; /* Spacing between project cards */
-    text-align: center;   /* Center image and text */
-    transition: transform 0.2s ease-in-out; /* Smooth hover effect */
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    transition: transform 0.2s ease-in-out;
 }
 
 .project:hover {
-    transform: scale(1.02); /* Slightly enlarge the project card on hover */
+    transform: scale(1.02);
 }
 
 .slideshow-container {
     position: relative;
-    max-width: 80%;  /* Limit the slideshow container width */
+    max-width: 80%;
     margin: auto;
 }
 
@@ -70,16 +66,8 @@ h1, h2, h3, h4 {
     font-size: 18px;
     transition: 0.6s ease;
     user-select: none;
-}
-
-.prev {
-    left: 0;
-    border-radius: 3px 0 0 3px;
-}
-
-.next {
-    right: 0;
-    border-radius: 0 3px 3px 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 3px;
 }
 
 .prev:hover, .next:hover {
@@ -89,6 +77,82 @@ h1, h2, h3, h4 {
 footer {
     text-align: center;
     padding: 1rem;
-    background-color: #222; 
+    background-color: #222;
     color: #f5f5f5;
+}
+
+/* Contact Form Styling */
+#contact {
+    background-color: #333; /* Darker background */
+    padding: 2rem;
+    border-radius: 12px; /* More rounded corners */
+    margin: 2rem auto; /* Center the container */
+    max-width: 400px; /* Limit the container width */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow */
+}
+
+#contact h3 {
+    color: #f5f5f5;
+    text-align: center; /* Center the heading */
+    margin-bottom: 1rem;
+}
+
+#contact p {
+    color: #ccc;
+    text-align: center; /* Center the email */
+    margin-bottom: 2rem; /* More space above the form */
+}
+
+#contact form {
+    display: grid; /* Use grid for layout */
+    grid-gap: 1rem; /* Space between form elements */
+}
+
+#contact label {
+    color: #f5f5f5;
+    font-weight: bold;
+}
+
+#contact input{
+    padding: 0.75rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #222; /* Even darker input background */
+    color: #f5f5f5;
+}
+#contact textarea {
+    padding: 0.75rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #222;
+    color: #f5f5f5;
+    resize: none; /* This line prevents resizing */
+    height: 80px; /* Set a fixed height */
+}
+
+#contact button[type="submit"] {
+    background-color: #007bff; /* Blue */
+    color: #f5f5f5;
+    padding: 1rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%; /* Make button full width */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15); /* Button shadow */
+}
+
+#contact button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+#contact form {
+    display: grid;
+    grid-gap: 1rem;
+}
+
+/* Style the message row specifically with flexbox */
+#contact .message-row {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    gap: 0.5rem; /* Adjust the gap as needed */
 }

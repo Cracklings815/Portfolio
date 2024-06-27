@@ -26,3 +26,33 @@ function autoSlide() {
 }
 
 autoSlide(); // Start automatic slide show
+
+
+const contactForm = document.querySelector("#contact form");
+
+contactForm.addEventListener("submit", async (event) => {
+    event.preventDefault(); // Prevent default form submission
+
+    const formData = new FormData(contactForm);
+    const email = formData.get("contact-email");
+    const message = formData.get("message");
+
+    try {
+        const response = await fetch("submit_contact_form.php", {
+            method: "POST",
+            body: formData,
+        });
+
+        if (response.ok) {
+            // Email sent successfully
+            alert("Thank you for your message!");
+            contactForm.reset(); // Clear the form
+        } else {
+            // Handle errors (e.g., server issue)
+            alert("Error sending the message. Please try again.");
+        }
+    } catch (error) {
+        console.error("Error sending the message:", error);
+        alert("An unexpected error occurred. Please try again.");
+    }
+});

@@ -60,7 +60,17 @@
         <section id="contact">
             <h3>Contact Me</h3>
             <p>Email: llemitllemit15@gmail.com</p>
-            <p>Phone: 09083933223</p>
+            <form action="submit_contact_form.php" method="POST">
+                <label for="contact-email">Your Email:</label>
+                <input type="email" id="contact-email" name="contact-email" required>
+                <br>
+                <div class="message-row">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" cols="50" required></textarea>
+                </div>
+                <br><br>
+                <button type="submit">Send</button>
+            </form>
         </section>
     </main>
 
