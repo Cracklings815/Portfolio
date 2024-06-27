@@ -48,8 +48,9 @@ contactForm.addEventListener("submit", async (event) => {
             alert("Thank you for your message!");
             contactForm.reset(); // Clear the form
         } else {
-            // Handle errors (e.g., server issue)
-            alert("Error sending the message. Please try again.");
+            response.text().then(errorMessage => {
+                alert(`Error sending the message: ${errorMessage}`);
+            })
         }
     } catch (error) {
         console.error("Error sending the message:", error);
