@@ -38,7 +38,7 @@ contactForm.addEventListener("submit", async (event) => {
     const message = formData.get("message");
 
     try {
-        const response = await fetch("index.php", {
+        const response = await fetch("email.php", {
             method: "POST",
             body: formData,
         });
