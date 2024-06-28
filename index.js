@@ -8,8 +8,8 @@ function plusSlides(n) {
 function showSlides(n) {
     let i;
     let slides = document.getElementsByClassName("slide");
-    if (n > slides.length) {slideIndex = 1}
-    if (n < 1) {slideIndex = slides.length}
+    if (n > slides.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = slides.length }
     for (i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
     }
@@ -22,11 +22,10 @@ function autoSlide() {
         slideIndex = 1;
     }
     showSlides(slideIndex);
-    setTimeout(autoSlide, 3000); // Change slide every 5 seconds
+    setTimeout(autoSlide, 5000); // Change slide every 3 seconds
 }
 
 autoSlide(); // Start automatic slide show
-
 
 const contactForm = document.querySelector("#contact form");
 
