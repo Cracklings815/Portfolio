@@ -34,26 +34,18 @@ contactForm.addEventListener("submit", async (event) => {
     event.preventDefault(); // Prevent default form submission
 
     const formData = new FormData(contactForm);
-    const email = formData.get("contact-email");
-    const message = formData.get("message");
-
-    try {
-        const response = await fetch("email.php", {
-            method: "POST",
-            body: formData,
-        });
-
-        if (response.ok) {
-            // Email sent successfully
-            alert("Thank you for your message!");
-            contactForm.reset(); // Clear the form
-        } else {
-            response.text().then(errorMessage => {
-                alert(`Error sending the message: ${errorMessage}`);
-            })
+    const response = await fetch(contactForm.action, {
+        method: contactForm.method,
+        body: formData,
+        headers: {
+            'Accept': 'application/json'
         }
-    } catch (error) {
-        console.error("Error sending the message:", error);
-        alert("An unexpected error occurred. Please try again.");
+    });
+
+    if (response.ok) {
+        alert("Thank you for your message!");
+        contactForm.reset(); // Clear the form
+    } else {
+        alert("Oops! There was a problem submitting your form");
     }
 });
